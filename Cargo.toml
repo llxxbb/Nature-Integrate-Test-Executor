@@ -1,0 +1,7 @@
+[package]
+name = "Nature-integrate-test-converter"
+version = "0.1.0"
+authors = ["llxxb <llxxbb@yeah.net>"]
+
+[dependencies]
+nature_common = {path = "../Nature-Common"}
