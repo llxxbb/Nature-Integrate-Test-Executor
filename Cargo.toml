@@ -5,5 +5,6 @@ authors = ["xuebin.Li <llxxbb@yeah.net>"]
 
 [dependencies]
 nature_common = {path = "../Nature-Common"}
+
 [lib]
-crate-type = ["dylib","rlib"]
+crate-type = ["dylib"]
