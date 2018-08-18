@@ -1,16 +1,16 @@
 [[package]]
-name = "Nature-integrate-test-converter"
-version = "0.1.0"
-dependencies = [
- "nature_common 0.1.0",
-]
-
-[[package]]
 name = "nature_common"
 version = "0.1.0"
 dependencies = [
  "serde 1.0.71 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.71 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "nature_integrate_test_converter"
+version = "0.1.0"
+dependencies = [
+ "nature_common 0.1.0",
 ]
 
 [[package]]
