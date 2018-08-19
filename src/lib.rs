@@ -4,6 +4,33 @@ use nature_common::*;
 
 
 #[no_mangle]
-pub extern fn simple_convert(para: &CallOutParameter) -> ConverterReturned {
-    ConverterReturned::Instances(vec![para.from.clone()])
+pub extern fn rtn_none(para: &CallOutParameter) -> ConverterReturned {
+    ConverterReturned::None
 }
+
+#[no_mangle]
+pub extern fn rtn_one(para: &CallOutParameter) -> ConverterReturned {
+    let mut instance = Instance::default();
+    instance.data.content = "one".to_string();
+    ConverterReturned::Instances(vec![instance])
+}
+
+#[no_mangle]
+pub extern fn rtn_tow(para: &CallOutParameter) -> ConverterReturned {
+    let mut one = Instance::default();
+    one.data.content = "one".to_string();
+    let mut two = Instance::default();
+    two.data.content = "two".to_string();
+    ConverterReturned::Instances(vec![one, two])
+}
+
+#[no_mangle]
+pub extern fn rtn_logical_error(para: &CallOutParameter) -> ConverterReturned {
+    ConverterReturned::LogicalError("logical".to_string())
+}
+
+#[no_mangle]
+pub extern fn rtn_environment_error(para: &CallOutParameter) -> ConverterReturned {
+    ConverterReturned::EnvError
+}
+
