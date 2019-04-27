@@ -2,10 +2,14 @@ extern crate nature_common;
 
 use nature_common::*;
 
-
 #[no_mangle]
 pub extern fn rtn_none(_para: &CallOutParameter) -> ConverterReturned {
     ConverterReturned::None
+}
+
+#[no_mangle]
+pub extern fn rtn_logical_error(_para: &CallOutParameter) -> ConverterReturned {
+    ConverterReturned::LogicalError("logical".to_string())
 }
 
 #[no_mangle]
@@ -22,11 +26,6 @@ pub extern fn rtn_tow(_para: &CallOutParameter) -> ConverterReturned {
     let mut two = Instance::default();
     two.data.content = "two".to_string();
     ConverterReturned::Instances(vec![one, two])
-}
-
-#[no_mangle]
-pub extern fn rtn_logical_error(_para: &CallOutParameter) -> ConverterReturned {
-    ConverterReturned::LogicalError("logical".to_string())
 }
 
 #[no_mangle]
