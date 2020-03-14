@@ -14,4 +14,4 @@ license = "MIT"
 nature_common = {path = "../Nature-Common", version="0.0.2"}
 
 [lib]
-crate-type = ["dylib"]
+crate-type = ["cdylib"]
