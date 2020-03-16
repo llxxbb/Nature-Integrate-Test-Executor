@@ -1,12 +1,12 @@
 [package]
-name = "nature_integrate_test_converter"
+name = "nature_integrate_test_executor"
 version = "0.0.3"
 authors = ["XueBin Li <llxxbb@yeah.net>"]
 edition = "2018"
 workspace = "../Nature"
 
-description = "Local converters used by Nature Test"
-repository = "https://github.com/llxxbb/Nature-Integrate-test-converter"
+description = "Local Executors used by Nature Test"
+repository = "https://github.com/llxxbb/Nature-Integrate-Test-Executor"
 license = "MIT"
 
 
