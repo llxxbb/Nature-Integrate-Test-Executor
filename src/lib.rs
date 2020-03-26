@@ -40,6 +40,6 @@ pub extern fn rtn_tow(_para: &ConverterParameter) -> ConverterReturned {
 #[allow(unused_attributes)]
 #[allow(improper_ctypes)]
 pub extern fn rtn_environment_error(_para: &ConverterParameter) -> ConverterReturned {
-    ConverterReturned::EnvError
+    ConverterReturned::EnvError("aforethought".to_string())
 }
 
