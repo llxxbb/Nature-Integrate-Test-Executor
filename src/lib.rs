@@ -63,3 +63,23 @@ pub extern fn filter_after_test(para: &Vec<Instance>) -> Result<Vec<Instance>> {
     }).collect();
     Ok(rtn)
 }
+
+#[no_mangle]
+#[allow(unused_attributes)]
+#[allow(improper_ctypes)]
+pub extern fn append_star(ins: Instance) -> Result<Instance> {
+    dbg!("----------- append_star ----------");
+    let mut ins = ins;
+    ins.content = ins.content.to_string() + " *";
+    Ok(ins)
+}
+
+#[no_mangle]
+#[allow(unused_attributes)]
+#[allow(improper_ctypes)]
+pub extern fn append_plus(ins: Instance) -> Result<Instance> {
+    dbg!("----------- append_plus ----------");
+    let mut ins = ins;
+    ins.content = ins.content.to_string() + " +";
+    Ok(ins)
+}
