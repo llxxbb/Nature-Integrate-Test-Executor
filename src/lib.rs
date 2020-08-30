@@ -1,6 +1,6 @@
-extern crate nature_common;
+extern crate nature;
 
-use nature_common::*;
+use nature::common::*;
 
 #[no_mangle]
 #[allow(unused_attributes)]

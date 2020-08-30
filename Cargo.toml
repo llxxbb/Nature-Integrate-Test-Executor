@@ -3,15 +3,13 @@ name = "nature_integrate_test_executor"
 version = "0.15.0"
 authors = ["XueBin Li <llxxbb@yeah.net>"]
 edition = "2018"
-workspace = "../Nature"
-
 description = "Local Executors used by Nature Test"
 repository = "https://github.com/llxxbb/Nature-Integrate-Test-Executor"
 license = "MIT"
 
 
 [dependencies]
-nature_common = {path = "../Nature-Common", version = "0.15.0"}
+nature = { path = "../Nature", version = "0.15.0" }
 
 [lib]
 crate-type = ["cdylib"]
