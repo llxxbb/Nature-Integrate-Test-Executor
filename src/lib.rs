@@ -4,21 +4,21 @@ use nature::common::*;
 
 #[no_mangle]
 #[allow(unused_attributes)]
-#[allow(improper_ctypes)]
+#[allow(improper_ctypes_definitions)]
 pub extern fn rtn_none(_para: &ConverterParameter) -> ConverterReturned {
     ConverterReturned::None
 }
 
 #[no_mangle]
 #[allow(unused_attributes)]
-#[allow(improper_ctypes)]
+#[allow(improper_ctypes_definitions)]
 pub extern fn rtn_logical_error(_para: &ConverterParameter) -> ConverterReturned {
     ConverterReturned::LogicalError("logical".to_string())
 }
 
 #[no_mangle]
 #[allow(unused_attributes)]
-#[allow(improper_ctypes)]
+#[allow(improper_ctypes_definitions)]
 pub extern fn rtn_one(_para: &ConverterParameter) -> ConverterReturned {
     let mut instance = Instance::default();
     instance.data.content = "one".to_string();
@@ -27,7 +27,7 @@ pub extern fn rtn_one(_para: &ConverterParameter) -> ConverterReturned {
 
 #[no_mangle]
 #[allow(unused_attributes)]
-#[allow(improper_ctypes)]
+#[allow(improper_ctypes_definitions)]
 pub extern fn rtn_tow(_para: &ConverterParameter) -> ConverterReturned {
     let mut one = Instance::default();
     one.data.content = "one".to_string();
@@ -38,14 +38,14 @@ pub extern fn rtn_tow(_para: &ConverterParameter) -> ConverterReturned {
 
 #[no_mangle]
 #[allow(unused_attributes)]
-#[allow(improper_ctypes)]
+#[allow(improper_ctypes_definitions)]
 pub extern fn rtn_environment_error(_para: &ConverterParameter) -> ConverterReturned {
     ConverterReturned::EnvError("aforethought".to_string())
 }
 
 #[no_mangle]
 #[allow(unused_attributes)]
-#[allow(improper_ctypes)]
+#[allow(improper_ctypes_definitions)]
 pub extern fn filter_before_test(para: &Instance) -> Result<Instance> {
     let mut rtn = para.clone();
     rtn.content = "hello".to_string();
@@ -54,7 +54,7 @@ pub extern fn filter_before_test(para: &Instance) -> Result<Instance> {
 
 #[no_mangle]
 #[allow(unused_attributes)]
-#[allow(improper_ctypes)]
+#[allow(improper_ctypes_definitions)]
 pub extern fn filter_after_test(para: &Vec<Instance>) -> Result<Vec<Instance>> {
     let rtn = para.iter().map(|rtn| {
         let mut rtn = rtn.clone();
@@ -66,7 +66,7 @@ pub extern fn filter_after_test(para: &Vec<Instance>) -> Result<Vec<Instance>> {
 
 #[no_mangle]
 #[allow(unused_attributes)]
-#[allow(improper_ctypes)]
+#[allow(improper_ctypes_definitions)]
 pub extern fn append_star(ins: Instance) -> Result<Instance> {
     dbg!("----------- append_star ----------");
     let mut ins = ins;
@@ -76,7 +76,7 @@ pub extern fn append_star(ins: Instance) -> Result<Instance> {
 
 #[no_mangle]
 #[allow(unused_attributes)]
-#[allow(improper_ctypes)]
+#[allow(improper_ctypes_definitions)]
 pub extern fn append_plus(ins: Instance) -> Result<Instance> {
     dbg!("----------- append_plus ----------");
     let mut ins = ins;
