@@ -46,7 +46,7 @@ pub extern fn rtn_environment_error(_para: &ConverterParameter) -> ConverterRetu
 #[no_mangle]
 #[allow(unused_attributes)]
 #[allow(improper_ctypes_definitions)]
-pub extern fn filter_before_test(para: &Instance) -> Result<Instance> {
+pub extern fn convert_before_test(para: &Instance) -> Result<Instance> {
     let mut rtn = para.clone();
     rtn.content = "hello".to_string();
     Ok(rtn)
@@ -55,7 +55,7 @@ pub extern fn filter_before_test(para: &Instance) -> Result<Instance> {
 #[no_mangle]
 #[allow(unused_attributes)]
 #[allow(improper_ctypes_definitions)]
-pub extern fn filter_after_test(para: &Vec<Instance>) -> Result<Vec<Instance>> {
+pub extern fn convert_after_test(para: &Vec<Instance>) -> Result<Vec<Instance>> {
     let rtn = para.iter().map(|rtn| {
         let mut rtn = rtn.clone();
         rtn.content = "hello".to_string();
