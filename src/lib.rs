@@ -13,7 +13,7 @@ pub extern fn rtn_none(_para: &ConverterParameter) -> ConverterReturned {
 #[allow(unused_attributes)]
 #[allow(improper_ctypes_definitions)]
 pub extern fn rtn_logical_error(_para: &ConverterParameter) -> ConverterReturned {
-    ConverterReturned::LogicalError("logical".to_string())
+    ConverterReturned::LogicalError { msg: "logical".to_string() }
 }
 
 #[no_mangle]
@@ -22,7 +22,7 @@ pub extern fn rtn_logical_error(_para: &ConverterParameter) -> ConverterReturned
 pub extern fn rtn_one(_para: &ConverterParameter) -> ConverterReturned {
     let mut instance = Instance::default();
     instance.data.content = "one".to_string();
-    ConverterReturned::Instances(vec![instance])
+    ConverterReturned::Instances { ins: vec![instance] }
 }
 
 #[no_mangle]
@@ -33,14 +33,14 @@ pub extern fn rtn_tow(_para: &ConverterParameter) -> ConverterReturned {
     one.data.content = "one".to_string();
     let mut two = Instance::default();
     two.data.content = "two".to_string();
-    ConverterReturned::Instances(vec![one, two])
+    ConverterReturned::Instances { ins: vec![one, two] }
 }
 
 #[no_mangle]
 #[allow(unused_attributes)]
 #[allow(improper_ctypes_definitions)]
 pub extern fn rtn_environment_error(_para: &ConverterParameter) -> ConverterReturned {
-    ConverterReturned::EnvError("aforethought".to_string())
+    ConverterReturned::EnvError { msg: "aforethought".to_string() }
 }
 
 #[no_mangle]
