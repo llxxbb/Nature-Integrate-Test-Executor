@@ -1,6 +1,6 @@
 extern crate nature;
 
-use nature::common::*;
+use nature::domain::*;
 
 #[no_mangle]
 #[allow(unused_attributes)]
