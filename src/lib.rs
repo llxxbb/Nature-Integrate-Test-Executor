@@ -67,9 +67,9 @@ pub extern fn convert_after_test(para: &Vec<Instance>) -> Result<Vec<Instance>> 
 #[no_mangle]
 #[allow(unused_attributes)]
 #[allow(improper_ctypes_definitions)]
-pub extern fn append_star(ins: Instance) -> Result<Instance> {
+pub extern fn append_star(ins: &Instance) -> Result<Instance> {
     dbg!("----------- append_star ----------");
-    let mut ins = ins;
+    let mut ins = ins.clone();
     ins.content = ins.content.to_string() + " *";
     Ok(ins)
 }
@@ -77,9 +77,9 @@ pub extern fn append_star(ins: Instance) -> Result<Instance> {
 #[no_mangle]
 #[allow(unused_attributes)]
 #[allow(improper_ctypes_definitions)]
-pub extern fn append_plus(ins: Instance) -> Result<Instance> {
+pub extern fn append_plus(ins: &Instance) -> Result<Instance> {
     dbg!("----------- append_plus ----------");
-    let mut ins = ins;
+    let mut ins = ins.clone();
     ins.content = ins.content.to_string() + " +";
     Ok(ins)
 }
